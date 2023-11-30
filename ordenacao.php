@@ -43,11 +43,8 @@ $arrayNotas = [
 echo 'Ordenando array multidimencional';
 
 function ordenaNotas($notaUm, $notaDois){
-    if($notaUm['nota'] > $notaDois['nota']) return -1;
-    if($notaUm['nota'] < $notaDois['nota']) return 1;
-    return 0;
+    return $notaDois['nota'] <=> $notaUm['nota'];
 }
 
 usort($arrayNotas, 'ordenaNotas');
-echo 'Valores ordenados';
 echo "<pre>"; print_r($arrayNotas); echo "</pre>";
